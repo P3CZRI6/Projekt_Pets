@@ -72,10 +72,10 @@ To jest aplikacja napisana w Laravel, która komunikuje się z API Pet Store. Po
 
 ## Interakcja z API
 Aplikacja komunikuje się z [API PetStore](https://petstore.swagger.io/) w celu wykonywania operacji CRUD na zasobach zwierząt. Używane są następujące metody HTTP:
-- **GET `/pet/findByStatus`**: Pobierz listę dostępnych zwierząt.
-- **POST `/pet``**: Dodaj nowe zwierzę.
-- **PUT `/pet`**: Zaktualizuj istniejące zwierzę.
-- **DELETE `/pet/{petId}`**: Usuń zwierzę.
+- **GET `/pet/findByStatus` **: Pobierz listę dostępnych zwierząt.
+- **POST `/pet` **: Dodaj nowe zwierzę.
+- **PUT `/pet` **: Zaktualizuj istniejące zwierzę.
+- **DELETE `/pet/{petId}` **: Usuń zwierzę.
 
 ## Obsługa błędów
 - Wyświetla komunikaty o błędach dla nieudanych żądań do API lub przesłanych formularzy.
