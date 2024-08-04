@@ -1,0 +1,54 @@
+*{
+    background-color: #3a3a3a;
+    color: white;
+}
+body{
+    text-align: center;
+}
+table{
+    width: 100%;
+    border: 2px solid rgb(248, 171, 28);
+    border-radius: 10px;
+}
+th, td{
+    padding: 1em;
+}
+table a, table button{
+    text-decoration: none;
+    padding: 10px;
+    background-color: rgb(248, 171, 28);
+    border: 1px solid rgb(248, 171, 28);
+    border-radius: 10px;
+    text-transform: uppercase;
+    font-size: 0.8em;
+    margin-left: 10px;
+}
+table a:hover, table button:hover{
+    background-color: rgb(161, 112, 19);
+    border: 1px solid rgb(161, 112, 19);
+    transition: all 0.5s;
+}
+th{
+    background-color: #292929;
+}
+form input{
+    background-color: white;
+    border: 2px solid rgb(248, 171, 28);
+    height: 2em;
+    border-radius: 5px;
+}
+#add_pet, #upd_pet{
+    padding: 10px 20px;
+    background-color: rgb(248, 171, 28);
+    border: 1px solid rgb(248, 171, 28);
+    border-radius: 10px;
+    text-transform: uppercase;
+    font-size: 0.9em;
+    font-weight: bold;
+}
+#add_pet:hover, #upd_pet:hover{
+    background-color: rgb(161, 112, 19);
+    border: 1px solid rgb(161, 112, 19);
+    transition: all 0.5s;
+}
+
