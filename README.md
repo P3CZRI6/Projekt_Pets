@@ -1,66 +1,86 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Aplikacja Pet Store
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+To jest aplikacja napisana w Laravel, która komunikuje się z API Pet Store. Pozwala na dodawanie, pobieranie, edytowanie i usuwanie wpisów dotyczących zwierząt z zasobu `/pet`.
 
-## About Laravel
+## Funkcje
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+- **Lista zwierząt**: Wyświetlanie dostępnych zwierząt.
+- **Dodaj zwierzę**: Dodawanie nowego zwierzęcia do sklepu.
+- **Edytuj zwierzę**: Aktualizacja danych istniejącego zwierzęcia.
+- **Usuń zwierzę**: Usunięcie zwierzęcia ze sklepu.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## Wymagania
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+- PHP >= 8.0
+- Composer
+- Laravel 10.x
+- MySQL lub inna obsługiwana baza danych
+- Node.js i npm (do kompilacji zasobów)
 
-## Learning Laravel
+## Instalacja
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+1. Sklonuj repozytorium
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+   ```
+   bash
+   git clone https://github.com/twojanazwa/petstore-app.git
+   cd petstore-app
+   ```
+2. Zainstaluj zależności PHP
+   Upewnij się, że masz zainstalowany Composer, a następnie uruchom:
+   ```
+   composer install
+   ```
+3. Skonfiguruj zmienne środowiskowe
+   Skopiuj plik `.env.example` do `.env` i skonfiguruj swoją bazę danych oraz inne zmienne środowiskowe:
+   ```
+   cp .env.example .env
+   ```
+   Zaktualizuj poniższe linie w pliku `.env`, dostosowując do swoich ustawień:
+   ```
+   DB_CONNECTION=mysql
+   DB_HOST=127.0.0.1
+   DB_PORT=3306
+   DB_DATABASE=nazwa_bazy_danych
+   DB_USERNAME=uzytkownik
+   DB_PASSWORD=haslo
+   ```
+4. Wygeneruj klucz aplikacji
+   ```
+   php artisan key:generate
+   ```
+5. Uruchom migracje i zasil bazę danych
+   ```
+   php artisan migrate --seed
+   ```
+6. Zainstaluj zależności Node.js i skompiluj zasoby
+   ```
+   npm install
+   npm run dev
+   ```
+7. Uruchom aplikację
+   Użyj wbudowanego serwera Laravel, aby uruchomić aplikację:
+   ```
+   php artisan serve
+   ```
+   Aplikacja będzie dostępna pod adresem http://localhost:8000.
+   
+## Użytkowanie
+- **Dodaj nowe zwierzę:** Przejdź do strony "Add New Pet" i wypełnij formularz, aby utworzyć nowy wpis dotyczący zwierzęcia.
+- **Edytuj zwierzę:** Kliknij na link "Edit" obok wybranego zwierzęcia, aby zaktualizować jego dane.
+- **Usuń zwierzę:** Kliknij przycisk "Delete", aby usunąć zwierzę z listy.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+## Interakcja z API
+Aplikacja komunikuje się z [API PetStore](https://petstore.swagger.io/) w celu wykonywania operacji CRUD na zasobach zwierząt. Używane są następujące metody HTTP:
+- **GET `/pet/findByStatus`**: Pobierz listę dostępnych zwierząt.
+- **POST `/pet``**: Dodaj nowe zwierzę.
+- **PUT `/pet`**: Zaktualizuj istniejące zwierzę.
+- **DELETE `/pet/{petId}`**: Usuń zwierzę.
 
-## Laravel Sponsors
+## Obsługa błędów
+- Wyświetla komunikaty o błędach dla nieudanych żądań do API lub przesłanych formularzy.
+- Waliduje dane wejściowe użytkownika przed wysłaniem żądań do API.
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
-
-### Premium Partners
-
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+## Autor
+### Patryk Jędrzejczyk
+[Profil GitHub](https://github.com/P3CZRI6/)
