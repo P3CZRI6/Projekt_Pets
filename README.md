@@ -38,7 +38,7 @@ To jest aplikacja napisana w Laravel, która komunikuje się z API Pet Store. Po
    ```
    Zaktualizuj poniższe linie w pliku `.env`, dostosowując do swoich ustawień:
    ```
-   DB_CONNECTION=mysql
+   DB_CONNECTION=mysql (sqlite)
    DB_HOST=127.0.0.1
    DB_PORT=3306
    DB_DATABASE=nazwa_bazy_danych (laravel)
