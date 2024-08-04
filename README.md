@@ -41,9 +41,9 @@ To jest aplikacja napisana w Laravel, która komunikuje się z API Pet Store. Po
    DB_CONNECTION=mysql
    DB_HOST=127.0.0.1
    DB_PORT=3306
-   DB_DATABASE=nazwa_bazy_danych
-   DB_USERNAME=uzytkownik
-   DB_PASSWORD=haslo
+   DB_DATABASE=nazwa_bazy_danych (laravel)
+   DB_USERNAME=uzytkownik (root)
+   DB_PASSWORD=haslo  ()
    ```
 4. Wygeneruj klucz aplikacji
    ```
